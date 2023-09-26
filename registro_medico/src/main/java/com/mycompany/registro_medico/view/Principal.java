@@ -14,6 +14,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    
     public Principal() {
         initComponents();
     }
@@ -27,15 +28,28 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButton1 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        sintomasList = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
         efetuarDigAutoButton = new javax.swing.JToggleButton();
         enviarCasosArmButton = new javax.swing.JToggleButton();
         diagnostico = new javax.swing.JTextField();
         enviarButton = new javax.swing.JToggleButton();
+        diarreia = new javax.swing.JCheckBox();
+        doresMusculares = new javax.swing.JCheckBox();
+        dorCabeca = new javax.swing.JCheckBox();
+        vomitos = new javax.swing.JCheckBox();
+        febre = new javax.swing.JCheckBox();
+        tosses = new javax.swing.JCheckBox();
+        dificuldadeRespirar = new javax.swing.JCheckBox();
+        fadiga = new javax.swing.JCheckBox();
+        fraqueza = new javax.swing.JCheckBox();
+        perdaApetite = new javax.swing.JCheckBox();
+        enjoo = new javax.swing.JCheckBox();
+        chiadoPeito = new javax.swing.JCheckBox();
+
+        jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,13 +58,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel2.setText("Sintomas: ");
-
-        sintomasList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Dor de cabeça", "Febre", "Dor de barriga", "Diarreia", "Tosse", "Vômitos", "Pressão alta", "Dores intestinais", "Dificuldade de evacuar", "Dores no corpo", " " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(sintomasList);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel3.setText("Diagnóstico: ");
@@ -85,35 +92,93 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        diarreia.setText("Diarreia");
+
+        doresMusculares.setText("Dores musculares");
+
+        dorCabeca.setText("Dor de cabeça ");
+        dorCabeca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dorCabecaActionPerformed(evt);
+            }
+        });
+
+        vomitos.setText("Vômitos");
+
+        febre.setText("Febre");
+
+        tosses.setText("Tosses");
+
+        dificuldadeRespirar.setText("Dificuldade para respirar");
+        dificuldadeRespirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dificuldadeRespirarActionPerformed(evt);
+            }
+        });
+
+        fadiga.setText("Fadiga");
+
+        fraqueza.setText("Fraqueza ");
+
+        perdaApetite.setText("Perda de apetite");
+
+        enjoo.setText("Enjoo");
+
+        chiadoPeito.setText("Chiado no peito ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(efetuarDigAutoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(enviarCasosArmButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(diagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(31, 31, 31)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(diarreia)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(efetuarDigAutoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(61, 61, 61)
-                                        .addComponent(enviarCasosArmButton))
-                                    .addComponent(diagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(317, 317, 317)
-                        .addComponent(enviarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addComponent(jLabel1)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                                .addComponent(doresMusculares)
+                                .addGap(18, 18, 18)
+                                .addComponent(dorCabeca)
+                                .addGap(18, 18, 18)
+                                .addComponent(dificuldadeRespirar)
+                                .addGap(26, 26, 26)
+                                .addComponent(fadiga))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(vomitos)
+                                .addGap(18, 18, 18)
+                                .addComponent(febre)
+                                .addGap(18, 18, 18)
+                                .addComponent(tosses)
+                                .addGap(18, 18, 18)
+                                .addComponent(fraqueza)
+                                .addGap(18, 18, 18)
+                                .addComponent(perdaApetite)
+                                .addGap(18, 18, 18)
+                                .addComponent(enjoo)
+                                .addGap(18, 18, 18)
+                                .addComponent(chiadoPeito)))
+                        .addContainerGap(17, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(354, 354, 354))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(enviarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(326, 326, 326))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,20 +186,33 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(diarreia)
+                    .addComponent(doresMusculares)
+                    .addComponent(dorCabeca)
+                    .addComponent(dificuldadeRespirar)
+                    .addComponent(fadiga))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vomitos)
+                    .addComponent(febre)
+                    .addComponent(tosses)
+                    .addComponent(fraqueza)
+                    .addComponent(perdaApetite)
+                    .addComponent(enjoo)
+                    .addComponent(chiadoPeito))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(diagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(29, 29, 29)
-                .addComponent(enviarButton)
                 .addGap(28, 28, 28)
+                .addComponent(enviarButton)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(efetuarDigAutoButton)
-                    .addComponent(enviarCasosArmButton))
-                .addGap(20, 20, 20))
+                    .addComponent(enviarCasosArmButton)
+                    .addComponent(efetuarDigAutoButton))
+                .addGap(49, 49, 49))
         );
 
         pack();
@@ -145,7 +223,35 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_diagnosticoActionPerformed
 
     private void enviarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarButtonActionPerformed
-        // TODO add your handling code here:
+        StringBuilder sintomas = new StringBuilder();
+        
+        if(diarreia.isSelected()){
+           sintomas.append("Diarreia");
+        } if(doresMusculares.isSelected()){
+            sintomas.append("Dores musculares");
+        } if(dorCabeca.isSelected()){
+            sintomas.append("Dor de Cabeça");
+        } if(dificuldadeRespirar.isSelected()){
+            sintomas.append("Dificuldade para respirar");
+        } if(fadiga.isSelected()){
+            sintomas.append("Fadiga");
+        } if(vomitos.isSelected()){
+            sintomas.append("Vômitos");
+        } if(febre.isSelected()){
+            sintomas.append("Febre");
+        } if(tosses.isSelected()){
+            sintomas.append("Tosses");
+        } if(fraqueza.isSelected()){
+            sintomas.append("Fraqueza");
+        } if(perdaApetite.isSelected()){
+            sintomas.append("Perda de apetite");
+        } if(enjoo.isSelected()){
+            sintomas.append("Enjoo");
+        } if(chiadoPeito.isSelected()){
+            sintomas.append("Chiado no peito");
+        }
+        
+        
     }//GEN-LAST:event_enviarButtonActionPerformed
 
     private void enviarCasosArmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarCasosArmButtonActionPerformed
@@ -155,6 +261,14 @@ public class Principal extends javax.swing.JFrame {
     private void efetuarDigAutoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efetuarDigAutoButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_efetuarDigAutoButtonActionPerformed
+
+    private void dificuldadeRespirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificuldadeRespirarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dificuldadeRespirarActionPerformed
+
+    private void dorCabecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dorCabecaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dorCabecaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,14 +306,25 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chiadoPeito;
     private javax.swing.JTextField diagnostico;
+    private javax.swing.JCheckBox diarreia;
+    private javax.swing.JCheckBox dificuldadeRespirar;
+    private javax.swing.JCheckBox dorCabeca;
+    private javax.swing.JCheckBox doresMusculares;
     private javax.swing.JToggleButton efetuarDigAutoButton;
+    private javax.swing.JCheckBox enjoo;
     private javax.swing.JToggleButton enviarButton;
     private javax.swing.JToggleButton enviarCasosArmButton;
+    private javax.swing.JCheckBox fadiga;
+    private javax.swing.JCheckBox febre;
+    private javax.swing.JCheckBox fraqueza;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> sintomasList;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JCheckBox perdaApetite;
+    private javax.swing.JCheckBox tosses;
+    private javax.swing.JCheckBox vomitos;
     // End of variables declaration//GEN-END:variables
 }
