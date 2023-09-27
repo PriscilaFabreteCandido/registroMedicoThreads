@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.registro_medico.view;
+package Cliente;
+
+import java.util.ArrayList;
+import javax.swing.JCheckBox;
 
 /**
  *
@@ -222,36 +225,25 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_diagnosticoActionPerformed
 
-    private void enviarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarButtonActionPerformed
-        StringBuilder sintomas = new StringBuilder();
+    private void sintomasSelecionados(ArrayList<String> sintomasPaciente){
+        JCheckBox[] listaSintomas = new JCheckBox[]{
+                    diarreia, doresMusculares, dorCabeca, dificuldadeRespirar, fadiga, 
+                    vomitos, febre, tosses, fraqueza, perdaApetite, enjoo, chiadoPeito};
         
-        if(diarreia.isSelected()){
-           sintomas.append("Diarreia");
-        } if(doresMusculares.isSelected()){
-            sintomas.append("Dores musculares");
-        } if(dorCabeca.isSelected()){
-            sintomas.append("Dor de Cabeça");
-        } if(dificuldadeRespirar.isSelected()){
-            sintomas.append("Dificuldade para respirar");
-        } if(fadiga.isSelected()){
-            sintomas.append("Fadiga");
-        } if(vomitos.isSelected()){
-            sintomas.append("Vômitos");
-        } if(febre.isSelected()){
-            sintomas.append("Febre");
-        } if(tosses.isSelected()){
-            sintomas.append("Tosses");
-        } if(fraqueza.isSelected()){
-            sintomas.append("Fraqueza");
-        } if(perdaApetite.isSelected()){
-            sintomas.append("Perda de apetite");
-        } if(enjoo.isSelected()){
-            sintomas.append("Enjoo");
-        } if(chiadoPeito.isSelected()){
-            sintomas.append("Chiado no peito");
+        for(JCheckBox sintoma : listaSintomas){
+            if(sintoma.isSelected()){
+                sintomasPaciente.add(sintoma.getText());
+            }
         }
+    }
         
+    
+    private void enviarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarButtonActionPerformed
+        ArrayList<String> sintomasPaciente = new ArrayList<>();
         
+        sintomasSelecionados(sintomasPaciente);
+  
+        System.out.println(sintomasPaciente);    
     }//GEN-LAST:event_enviarButtonActionPerformed
 
     private void enviarCasosArmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarCasosArmButtonActionPerformed
@@ -259,7 +251,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_enviarCasosArmButtonActionPerformed
 
     private void efetuarDigAutoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efetuarDigAutoButtonActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
     }//GEN-LAST:event_efetuarDigAutoButtonActionPerformed
 
     private void dificuldadeRespirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dificuldadeRespirarActionPerformed
