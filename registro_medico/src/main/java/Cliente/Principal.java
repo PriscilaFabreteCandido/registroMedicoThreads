@@ -5,8 +5,10 @@
  */
 package Cliente;
 
+import Servidor.SolicitacaoServico;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,7 +19,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    
+    Cliente cliente = new Cliente();
     public Principal() {
         initComponents();
     }
@@ -235,6 +237,8 @@ public class Principal extends javax.swing.JFrame {
                 sintomasPaciente.add(sintoma.getText());
             }
         }
+        
+       
     }
         
     
@@ -242,6 +246,12 @@ public class Principal extends javax.swing.JFrame {
         ArrayList<String> sintomasPaciente = new ArrayList<>();
         
         sintomasSelecionados(sintomasPaciente);
+        
+        SolicitacaoServico solicitacao = new SolicitacaoServico(sintomasPaciente, diagnostico.getText(),  1);
+        
+        RespostaServico respostaServidor = cliente.enviar(solicitacao, 1);
+                
+        JOptionPane.showMessageDialog(this, respostaServidor, "Resposta do servidor", JOptionPane.INFORMATION_MESSAGE);
   
         System.out.println(sintomasPaciente);    
     }//GEN-LAST:event_enviarButtonActionPerformed
