@@ -14,13 +14,9 @@ import javax.swing.JOptionPane;
  *
  * @author prisc
  */
-public class Principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Principal
-     */
-    Cliente cliente = new Cliente();
-    public Principal() {
+public class ClienteTCP extends javax.swing.JFrame {
+    
+    public ClienteTCP() {
         initComponents();
     }
 
@@ -237,8 +233,6 @@ public class Principal extends javax.swing.JFrame {
                 sintomasPaciente.add(sintoma.getText());
             }
         }
-        
-       
     }
         
     
@@ -247,13 +241,12 @@ public class Principal extends javax.swing.JFrame {
         
         sintomasSelecionados(sintomasPaciente);
         
-        SolicitacaoServico solicitacao = new SolicitacaoServico(sintomasPaciente, diagnostico.getText(),  1);
+        Cliente consulta = new Cliente();
         
-        RespostaServico respostaServidor = cliente.enviar(solicitacao, 1);
-                
+        RespostaServico respostaServidor = consulta.enviarRequisicao(new SolicitacaoServico(sintomasPaciente, "kkdf", 1));
+       
+        System.out.println("Mensagem retornada no ClienteTCP: " + respostaServidor.getMsg());
         JOptionPane.showMessageDialog(this, respostaServidor, "Resposta do servidor", JOptionPane.INFORMATION_MESSAGE);
-  
-        System.out.println(sintomasPaciente);    
     }//GEN-LAST:event_enviarButtonActionPerformed
 
     private void enviarCasosArmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviarCasosArmButtonActionPerformed
@@ -289,20 +282,21 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteTCP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                new ClienteTCP().setVisible(true);
             }
         });
     }

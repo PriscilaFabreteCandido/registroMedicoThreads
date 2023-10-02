@@ -5,7 +5,12 @@
  */
 package Servidor;
 
+import Cliente.RespostaServico;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.net.Socket;
 import java.util.ArrayList;
 
 /**
@@ -13,22 +18,22 @@ import java.util.ArrayList;
  * @author prisc
  */
 public class SolicitacaoServico implements Serializable{
-     private int codigo;
+    private int tipoRequisicao;
     private ArrayList<String> sintomas;
     private String diagnostico;
     
     public SolicitacaoServico(ArrayList<String> sintomas, String diagnostico, int codigo) {
         this.sintomas = sintomas;
         this.diagnostico = diagnostico;
-        this.codigo = codigo;
+        this.tipoRequisicao = codigo;
     }
     
     public int getCodigo() {
-        return codigo;
+        return tipoRequisicao;
     }
 
     public void setCodigo(int codigo) {
-        this.codigo = codigo;
+        this.tipoRequisicao = codigo;
     }
     
     public ArrayList<String> getSintomas() {
@@ -46,4 +51,5 @@ public class SolicitacaoServico implements Serializable{
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
     }
+    
 }
