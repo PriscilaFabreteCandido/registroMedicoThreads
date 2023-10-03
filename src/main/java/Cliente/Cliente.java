@@ -1,43 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Cliente;
 
-import Servidor.SolicitacaoServico;
+import Servicos.Resposta;
+import Servicos.Solicitacao;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
-/**
- *
- * @author 2021122760232
- */
 public class Cliente {
 
     public Cliente() {
     }
     
-    public RespostaServico enviarRequisicao(SolicitacaoServico solicitacao){
-        try {
-            Socket socket = new Socket("localhost", 12345);
-            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+    public Resposta enviarConsulta(Solicitacao solicitacao){   
+        try{
+           final String enderecoIP = InetAddress.getLocalHost().getHostAddress();
+            
+            Socket socket = new Socket(InetAddress.getLocalHost().getHostAddress(), 12345);
+            
+            ObjectOutputStream objectOutput = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream objectInput = new ObjectInputStream(socket.getInputStream());
+            
+            objectOutput.writeObject(solicitacao);
 
-            out.writeObject(solicitacao);
+            Resposta respostaServidor = (Resposta) objectInput.readObject();
+
+            socket.close();
             
-            RespostaServico resposta = (RespostaServico) in.readObject();
-            
-            out.close();
-            in.close();
-           // socket.close();
-            return (RespostaServico) resposta;
-        } catch (IOException | ClassNotFoundException ex) {
+            return respostaServidor;   
+        } catch (ClassNotFoundException | IOException mensagem){
+            System.out.println("Mensagem de erro ao enviar consulta: " + mensagem);
             return null;
         }
-        
-        
     }
+    
 }
